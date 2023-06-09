@@ -1,13 +1,16 @@
-import React from 'react'
-import styles from './styles.module.scss'
+import React from 'react';
+import styles from './styles.module.scss';
 
-function BtnChanger() {
+function BtnChanger({nextImg,pastImg}) {
   return (
     <>
-    <button className={styles.btnPast}>{'<'}</button>
-    <button className={styles.btnNext}>{'>'}</button>
+      <button onClick={nextImg} className={styles.btnPast}>
+        {'<'}
+      </button>
+      <button onClick={pastImg} className={styles.btnNext}>
+        {'>'}
+      </button>
     </>
-  )
+  );
 }
-
 export default BtnChanger;
