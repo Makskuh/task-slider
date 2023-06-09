@@ -1,6 +1,58 @@
 const imageArray = [
-  {src :'https://stsci-opo.org/STScI-01EVT11Z5BWCCMA71PB34ZYQG2.png',
-alt: 'Pictures-2'},
-{src:'https://stsci-opo.org/STScI-01EVVKN2TR06RV2BPH23RH50J0.jpg',alt:'Pictures-3'},{src:'https://stsci-opo.org/STScI-01EVVF6T3CN3RPZYFQ1QPGQNMS.png',alt:'Pictures-4'},{src:'https://stsci-opo.org/STScI-01EVSW9BW20MSEFGYRN8EVYRR3.png',alt:'Pictures-4'},{src:'https://stsci-opo.org/STScI-01EVT0NBSMYTF18PPRCGTMTT80.png',alt:'Pictures-5'},{src:'https://stsci-opo.org/STScI-01EVT2BTZENJ6WB7QQ2RXSVF9M.png',alt:'Pictures-6'},{src:'https://stsci-opo.org/STScI-01EVVBPJY2SAKG418YXFTKPJ2W.png',alt:'Pictures-7'},{src:'https://stsci-opo.org/STScI-01EVT22QRZPHVCYMET9BF7J868.png',alt:'Pictures-8'},{src:'https://stsci-opo.org/STScI-01EVSV88HK94WE3ZP7YYSHHN04.png',alt:'Pictures-9'},{src:'https://stsci-opo.org/STScI-01EVVB69VN7R8RAD7XQJ8FWM22.png',alt:'Pictures-10'}
-]
+  {
+    src: 'https://stsci-opo.org/STScI-01EVSQQZQDXK4V2BYGG8TNW9A1.png',
+    alt: 'Picture-1',
+    id:0
+  },
+  {
+    src: 'https://p4.wallpaperbetter.com/wallpaper/983/633/65/outer-space-1920x1080-space-outer-space-hd-art-wallpaper-preview.jpg',
+    alt: 'Picture-2',
+    id:1
+  },
+  {
+    src: 'https://storge.pic2.me/c/1360x800/946/59c1304c2dd67.jpg',
+    alt: 'Picture-3',
+    id:2
+  },
+  {
+    src: 'https://p4.wallpaperbetter.com/wallpaper/268/126/395/sci-fi-nebula-space-hd-wallpaper-preview.jpg',
+    alt: 'Picture-4',
+    id:3
+  },
+  {
+    src: 'https://w.forfun.com/fetch/1a/1aa186260f3785052874f480a16d9a97.jpeg',
+    alt: 'Picture-5',
+    id:4
+  },
+  {
+    src: 'https://foni.club/uploads/posts/2023-02/1676846391_foni-club-p-oboi-plansheta-kosmos-na-rabochii-stol-pla-11.jpg',
+    alt: 'Picture-6',
+    id:5
+  },
+  {
+    src: 'https://wallpapershome.ru/images/pages/ico_h/17042.jpg',
+    alt: 'Picture-7',
+    id:6
+  },
+  {
+    src: 'https://kalix.club/uploads/posts/2022-12/1671712643_kalix-club-p-kosmos-abstraktsiya-oboi-7.jpg',
+    alt: 'Picture-8',
+    id:7
+  },
+  {
+    src: 'https://wallpapershome.ru/images/wallpapers/kosmos-3840x2160-glaz-4k-5k-lava-android-oboi-svet-oranjeviy-11640.jpg',
+    alt: 'Picture-9',
+    id:8
+  },
+  {
+    src: 'https://w.forfun.com/fetch/82/82f888d280b7b0598de8f7cae857f54c.jpeg',
+    alt: 'Picture-10',
+    id:9
+  },
+  {
+    src: 'https://i.pinimg.com/originals/27/32/76/2732765f7d5bbef5150bab5dc464d251.jpg',
+    alt: 'Picture-last',
+    id:10
+  },
+];
 export default imageArray;

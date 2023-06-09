@@ -2,6 +2,7 @@ import { Component } from 'react';
 import styles from './styles.module.scss';
 import BtnChanger from '../NextImg';
 import imageArray from '../component/img/imgArray';
+import NewImgItem from '../ImgItem';
 const length = imageArray.length
 class SliderDisplay extends Component {
   constructor(props) {
@@ -26,30 +27,10 @@ class SliderDisplay extends Component {
   };
   render() {
     const { imgArray, currentImg } = this.state;
-    const length = imgArray.length;
     return (
       <section className={styles.wrapperSlider}>
-        <button onClick={this.pastImg} className={styles.btnPast}>
-          {'<'}
-        </button>
-        <button onClick={this.nextImg} className={styles.btnNext}>
-          {'>'}
-        </button>
-        {imgArray.map((itemImg, index) => {
-          if (currentImg === index) {
-            return (
-              <>
-                <img
-                  key={itemImg.id}
-                  className={styles.img}
-                  src={itemImg.src}
-                  alt={itemImg.alt}
-                />
-                <p className={styles.textUnderImg}>{itemImg.alt}</p>
-              </>
-            );
-          }
-        })}
+        <BtnChanger onClick={this.nextImg} />
+        <NewImgItem imageArray={imgArray} currentImg = {currentImg} key={currentImg}/>
       </section>
     );
   }
