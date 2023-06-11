@@ -4,9 +4,9 @@ import styles from './component/style/styles.module.scss'
 
 function App() {
   return (
-    <div className={styles.centeredSlider}>
+    <section className={styles.centeredSlider}>
     <SliderDisplay/>
-    </div>
+    </section>
   );
 }
 

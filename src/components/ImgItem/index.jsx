@@ -1,10 +1,10 @@
 
 import styles from '../SliderDisplay/styles.module.scss';
-function NewImgItem({ imageArray, currentImg}) {
-  const slideArr = imageArray.map((itemImg, index) => {
+function NewImgItem({ imgArray, currentImg}) {
+  const slideArr = imgArray.map((itemImg, index) => {
     if (currentImg === index) {
       return (
-        <div key={imageArray.id} className={styles.imgWrapper}>
+        <div key={itemImg.id} className={styles.imgWrapper}>
           <img className={styles.img} src={itemImg.src} alt={itemImg.alt} />
           <p className={styles.textUnderImg}>{itemImg.alt}</p>
         </div>

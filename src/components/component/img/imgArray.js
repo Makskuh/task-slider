@@ -1,4 +1,4 @@
-const imageArray = [
+const imageData = [
   {
     src: 'https://stsci-opo.org/STScI-01EVSQQZQDXK4V2BYGG8TNW9A1.png',
     alt: 'Picture-1',
@@ -55,4 +55,5 @@ const imageArray = [
     id:10
   },
 ];
-export default imageArray;
+const lengthImgArr = imageData.length;
+export  {imageData,lengthImgArr};
