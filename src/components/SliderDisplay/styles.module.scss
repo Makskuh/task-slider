@@ -1,7 +1,7 @@
 .wrapperSlider {
   display: block;
-  width: 700px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
   position: relative;
 }
 .imgWrapper {
@@ -14,25 +14,22 @@
   text-align: center;
 }
 .img {
-  width:100%;
+  object-fit: cover;
+  width: 100%;
   height: 100%;
   border: 2px solid black;
   border-radius: 10px;
-  
 }
 %btnBasic {
   position: absolute;
-  font-size: 20px;
-  top: 50%;
-  border-radius: 50%;
-  background-color: rgb(0, 119, 255);
-  width: 50px;
-  height: 50px;
+  font-size: 80px;
+  top: 80%;
+  background: none;
+  border: none;
   transition: all 0.2s;
-  color: white;
-  border: 2px solid white;
+  color: rgb(214, 19, 201);
   &:hover {
-    background-color: blue;
+    color: rgb(0, 255, 13);
   }
 }
 .btnNext {
@@ -42,4 +39,17 @@
 .btnPast {
   @extend %btnBasic;
   left: 50px;
+}
+.btnAutoSlide {
+  @extend %btnBasic;
+  right: 60%;
+  width: 70px;
+  height: 70px;
+}
+.btnStopSlide {
+  @extend %btnBasic;
+  right: 40%;
+  &:hover {
+    color: rgb(251, 2, 2);
+  }
 }
