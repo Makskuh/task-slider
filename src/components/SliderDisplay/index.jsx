@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import styles from './styles.module.scss';
-import { imageData, lengthImgArr } from '../component/img/imgArray';
-import NewImgItem from '../ImgItem';
+import { imageData, lengthImgArr } from '../component/imgForSlider/imgArray'
+import ArrowBtn from './ArrowBtn';
+import ChangeImgItem from './ChangeImgItem';
+import AutoPlayBtn from './AutoPlayBtn';
 
 class SliderDisplay extends Component {
   constructor(props) {
@@ -45,24 +47,16 @@ class SliderDisplay extends Component {
       });
     }, 3000);
   };
-
+componentDidMount(){
+  this.startAuto();
+}
   render() {
-    const { imgArray, currentImg } = this.state;
+    const { currentImg, imgArray } = this.state;
     return (
       <section className={styles.wrapperSlider}>
-        <button onClick={this.pastImg} className={styles.btnPast}>
-          {'<'}
-        </button>
-        <button onClick={this.nextImg} className={styles.btnNext}>
-          {'>'}
-        </button>
-        <NewImgItem imgArray={imgArray} currentImg={currentImg} />
-        <button className={styles.btnAutoSlide} onClick={this.startAuto}>
-          {'∞'}
-        </button>
-        <button className={styles.btnStopSlide} onClick={this.stopAuto}>
-          {'⊠'}
-        </button>
+        <ArrowBtn nextImg={this.nextImg} pastImg={this.pastImg} />
+        <ChangeImgItem imgArray={imgArray} currentImg={currentImg} />
+        <AutoPlayBtn  stopAuto={this.stopAuto} startAuto={this.startAuto}/>
       </section>
     );
   }

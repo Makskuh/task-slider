@@ -1,6 +1,5 @@
-
-import styles from '../SliderDisplay/styles.module.scss';
-function NewImgItem({ imgArray, currentImg}) {
+import styles from '../styles.module.scss';
+function ChangeImgItem({ imgArray, currentImg }) {
   const slideArr = imgArray.map((itemImg, index) => {
     if (currentImg === index) {
       return (
@@ -12,7 +11,7 @@ function NewImgItem({ imgArray, currentImg}) {
     }
     return null;
   });
-  return <>{slideArr }</>;
+  return <>{slideArr}</>;
 }
 
-export default NewImgItem;
+export default ChangeImgItem;

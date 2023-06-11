@@ -27,9 +27,11 @@
   background: none;
   border: none;
   transition: all 0.2s;
-  color: rgb(214, 19, 201);
+  color: rgb(138, 169, 194);
+  opacity: 0.65;
   &:hover {
-    color: rgb(0, 255, 13);
+    opacity: 1;
+    color: rgb(12, 144, 196);
   }
 }
 .btnNext {
@@ -48,7 +50,7 @@
 }
 .btnStopSlide {
   @extend %btnBasic;
-  right: 40%;
+  right: 35%;
   &:hover {
     color: rgb(251, 2, 2);
   }
