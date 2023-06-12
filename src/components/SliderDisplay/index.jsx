@@ -4,6 +4,7 @@ import { imageData, lengthImgArr } from '../component/imgForSlider/imgArray'
 import ArrowBtn from './ArrowBtn';
 import ChangeImgItem from './ChangeImgItem';
 import AutoPlayBtn from './AutoPlayBtn';
+import classname from 'classname';
 
 class SliderDisplay extends Component {
   constructor(props) {
@@ -51,12 +52,14 @@ componentDidMount(){
   this.startAuto();
 }
   render() {
+    const AutoPlay  = classname(styles.btnAutoSlide,{[styles.btnisActive]:this.intervalSlider})
     const { currentImg, imgArray } = this.state;
     return (
       <section className={styles.wrapperSlider}>
+        <h1 className={styles.h1}>Slider</h1>
         <ArrowBtn nextImg={this.nextImg} pastImg={this.pastImg} />
         <ChangeImgItem imgArray={imgArray} currentImg={currentImg} />
-        <AutoPlayBtn  stopAuto={this.stopAuto} startAuto={this.startAuto}/>
+        <AutoPlayBtn  stopAuto={this.stopAuto} startAuto={this.startAuto} className={AutoPlay}/>
       </section>
     );
   }

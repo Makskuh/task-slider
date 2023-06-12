@@ -4,6 +4,10 @@
   height: 600px;
   position: relative;
 }
+.h1 {
+  text-align: center;
+  font-size: 80px;
+}
 .imgWrapper {
   width: inherit;
   height: inherit;
@@ -23,7 +27,7 @@
 %btnBasic {
   position: absolute;
   font-size: 80px;
-  top: 80%;
+  top: 95%;
   background: none;
   border: none;
   transition: all 0.2s;
@@ -31,7 +35,7 @@
   opacity: 0.65;
   &:hover {
     opacity: 1;
-    color: rgb(12, 144, 196);
+    color: rgb(38, 255, 0);
   }
 }
 .btnNext {
@@ -47,6 +51,11 @@
   right: 60%;
   width: 70px;
   height: 70px;
+  font-size: 70px;
+}
+.btnisActive {
+  color:rgb(38, 255, 0);
+  opacity: 1;
 }
 .btnStopSlide {
   @extend %btnBasic;

@@ -1,15 +1,15 @@
 import styles from '../styles.module.scss';
 
 function AutoPlayBtn(props) {
-  const { stopAuto, startAuto } = props;
+  const { stopAuto, startAuto ,className} = props;
   return (
     <>
       <button
         onClick={startAuto}
-        className={styles.btnAutoSlide}
+        className={className}
         title="Autoplay"
       >
-        {'∞'}
+        {'▶'}
       </button>
       <button onClick={stopAuto} className={styles.btnStopSlide} title="Stop">
         {'x'}
