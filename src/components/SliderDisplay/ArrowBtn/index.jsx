@@ -5,10 +5,10 @@ function ArrowBtn(props) {
   return (
     <>
       <button onClick={pastImg} className={styles.btnPast}>
-        {'<='}
+        {'⇦'}
       </button>
       <button onClick={nextImg} className={styles.btnNext}>
-        {'=>'}
+        {'⇨'}
       </button>
     </>
   );
