@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import styles from './styles.module.scss';
-import { imageData, lengthImgArr } from '../component/imgForSlider/imgArray'
+import { imageData, lengthImgArr } from '../component/imgForSlider/imgArray';
 import ArrowBtn from './ArrowBtn';
 import ChangeImgItem from './ChangeImgItem';
 import AutoPlayBtn from './AutoPlayBtn';
 import classname from 'classname';
+import ChangeInterval from './ChangeInterval';
 
 class SliderDisplay extends Component {
   constructor(props) {
@@ -12,6 +13,8 @@ class SliderDisplay extends Component {
     this.state = {
       imgArray: structuredClone(imageData),
       currentImg: 0,
+      isWorking: false,
+      changeInterval: 3000,
     };
     this.intervalSlider = null;
   }
@@ -34,6 +37,9 @@ class SliderDisplay extends Component {
   stopAuto = () => {
     clearInterval(this.intervalSlider);
     this.intervalSlider = null;
+    this.setState({
+      isWorking: false,
+    });
   };
   startAuto = () => {
     if (this.intervalSlider) {
@@ -41,25 +47,41 @@ class SliderDisplay extends Component {
     }
     this.intervalSlider = setInterval(() => {
       this.setState({
+        isWorking: true,
         currentImg:
           this.state.currentImg === lengthImgArr - 1
             ? 0
             : this.state.currentImg + 1,
       });
-    }, 3000);
+    }, [this.state.changeInterval]);
   };
-componentDidMount(){
-  this.startAuto();
-}
+  handleChange = ({ target: { value } }) => {
+    if (
+      typeof parseInt(value) === 'number' &&
+      !isNaN(parseInt(value)) &&
+      value >= 0.5
+    ) {
+      return this.setState({
+        changeInterval: value * 1000,
+      });
+    }
+  };
+
   render() {
-    const AutoPlay  = classname(styles.btnAutoSlide,{[styles.btnisActive]:this.intervalSlider})
-    const { currentImg, imgArray } = this.state;
+    const { currentImg, imgArray, isWorking } = this.state;
+    const AutoPlay = classname(styles.btnAutoSlide, {
+      [styles.btnisActive]: isWorking,
+    });
     return (
       <section className={styles.wrapperSlider}>
-        <h1 className={styles.h1}>Slider</h1>
         <ArrowBtn nextImg={this.nextImg} pastImg={this.pastImg} />
         <ChangeImgItem imgArray={imgArray} currentImg={currentImg} />
-        <AutoPlayBtn  stopAuto={this.stopAuto} startAuto={this.startAuto} className={AutoPlay}/>
+        <AutoPlayBtn
+          stopAuto={this.stopAuto}
+          startAuto={this.startAuto}
+          className={AutoPlay}
+        />
+        <ChangeInterval getInterval={this.handleChange} />
       </section>
     );
   }
